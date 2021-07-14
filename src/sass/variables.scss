@@ -1,23 +1,33 @@
 :root {
   // Colors
-  --color-primary: #20d1b1;
-  --color-complement: #0993f5;
-  --color-secondary: #121ef3;
+  --colorPrimary: #20d1b1;
+  --colorComplement: #0993f5;
+  --colorSecondary: #121ef3;
 
-  --bg-color: #fafafa;
-  --text-color: #333;
+  --bgColor: #fafafa;
+  --textColor: #333;
 
   // Gradients
   --gradient-bg-primary: linear-gradient(
     75deg,
-    var(--color-primary) 0%,
-    var(--color-complement) 50%,
-    var(--color-secondary) 100%
+    var(--colorPrimary) 0%,
+    var(--colorComplement) 50%,
+    var(--colorSecondary) 100%
   );
 }
+
 /*
 @media (prefers-color-scheme: dark) {
-}*/
+  :root {
+    --colorPrimary: #d120ae;
+    --colorComplement: #f56409;
+    --colorSecondary: #f3b312;
+
+    --bgColor: #011129;
+    --textColor: #fafafa;
+  }
+}
+*/
 
 $body-width: calc(100% - 8rem);
 

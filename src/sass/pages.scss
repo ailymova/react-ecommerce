@@ -9,7 +9,7 @@
 
     & .breadcrumbs {
       display: block;
-      color: var(--color-complement);
+      color: var(--colorComplement);
       font-size: 1.5rem;
       font-weight: 600;
       text-transform: uppercase;
@@ -32,7 +32,7 @@
       font-size: 4rem;
       font-weight: 600;
       text-transform: uppercase;
-      color: var(--color-complement);
+      color: var(--colorComplement);
       margin-bottom: 1rem;
     }
 
@@ -45,7 +45,7 @@
       font-weight: 300;
 
       & span {
-        color: var(--color-complement);
+        color: var(--colorComplement);
         font-weight: 600;
       }
     }
