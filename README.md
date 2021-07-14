@@ -1,20 +1,19 @@
 # React eCommerce
 
-Demo of Snap Shot [Link to the proyect, if any]
+![Project Snapshot](./src/assets/project_snapshot.jpg)
 
 ## Summary
 
 // TODO:
-...
+What the project does?
 
 ### Requirements
 
-A partir de la siguiente documentación de un backend genérico:
+Base on this generic backend:
 
 - [Backend API](https://ecomerce-master.herokuapp.com/docs)
 
-**Construye un e-commerce con React.**
-El diseño es libre y esta vez SÍ se tomará en cuenta.
+**Build an e-commerce with React.**
 
 Características Generales:
 
@@ -27,9 +26,9 @@ Características Generales:
 Funcionalidades CUSTOMER:
 
 - [ ] Sin Usuario / Con Usuario (sin iniciar sesión / con sesión iniciada)
-- [ ] Cuando entro al home puedo ver todos los productos
-- [ ] Siempre hay una barra de búsqueda en la navbar para hacer búsquedas por productos.
-- [ ] Si doy click a un producto, puedo ver su detalle completo en una URL / ruta única para este producto.
+- [x] Cuando entro al home puedo ver todos los productos
+- [x] Siempre hay una barra de búsqueda en la navbar para hacer búsquedas por productos.
+- [x] Si doy click a un producto, puedo ver su detalle completo en una URL / ruta única para este producto.
 
 Sin Usuario:
 
@@ -50,11 +49,11 @@ Funcionalidades ADMIN:
 
 ## Motivation
 
-The purpose of this project was ...
+Practice how to start a semi-real project from the ground up with React. (Maybe something you can encounter in the wild out there).
 
 ## Built With
 
-- React js
+- ReactJS
 - React Router
 - React Hooks
 - Context API
@@ -63,13 +62,9 @@ The purpose of this project was ...
 ## Features
 
 1. Responsive Design.
-2. ...
+1. Light/Dark Theme
 
 ## Coming Soon
 
-- ...
-
-## Contributing
-
-Everyone is welcomed to contribute to this project. You can contribute either by submitting bugs or suggesting improvements by opening an issue on GitHub. Please see the CONTRIBUTING guidelines for more information.
-This project was bootstrapped with Create React App.
+- Filter Sidebar
+- Animations

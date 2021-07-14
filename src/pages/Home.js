@@ -31,8 +31,6 @@ const Home = () => {
     return () => myAbortController.abort();
   }, []);
 
-  // .filter(prod => prod.product_name.toLowerCase().includes(query.toLowerCase()) || prod.brand.toLowerCase().includes(query.toLowerCase()) )
-
   return (
     <>
       <Search query={query} handleQuery={handleQuery} />
