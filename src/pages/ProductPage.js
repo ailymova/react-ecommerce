@@ -1,7 +1,7 @@
-import React from 'react';
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import imageNotFound from '../assets/Image-Not-Available.png';
+import Button from '../components/Button';
 import '../sass/pages.scss';
 
 const ProductPage = () => {
@@ -34,6 +34,7 @@ const ProductPage = () => {
         <>
           <div className="col-50">
             <img
+              className="single-prod__img"
               src={!product.image ? imageNotFound : product.image}
               alt={product.product_name}
             />
@@ -42,16 +43,25 @@ const ProductPage = () => {
             <span className="breadcrumbs">
               <Link to="/">Home</Link> {`>`} {product.product_name}
             </span>
-            <h1>{product.product_name}</h1>
-            <h3>{!product.brand ? 'GENERIC' : product.brand}</h3>
-            <p>{product.description}</p>
-            <p>Category: {product.category}</p>
-            <p>SKU: {product.sku}</p>
-            <h2>$ {product.price}.00</h2>
+            <h1 className="title">{product.product_name}</h1>
+            <h3 className="brand">
+              {!product.brand ? 'GENERIC' : product.brand}
+            </h3>
+            <p className="description">{product.description}</p>
+            <p className="meta">
+              <span>Category:</span> {product.category}
+            </p>
+            <p className="meta">
+              <span>SKU:</span> {product.sku}
+            </p>
+
             <div style={{ display: 'flex' }}>
               <p className="col-50">Quantiy components</p>
-              <button disabled={true}>Login to purchase</button>
+              <h2 className="price">$ {product.price}.00</h2>
             </div>
+            <Button styleClass="btn--full" disabled={true}>
+              Login to purchase
+            </Button>
           </div>
         </>
       ) : (

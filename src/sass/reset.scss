@@ -20,7 +20,9 @@ html {
 
 body {
   box-sizing: border-box;
-  background-color: var(--light-bg-color);
+
+  background-color: var(--bg-color);
+  color: var(--text-color);
   font-size: 2rem;
   font-family: 'Open Sans', sans-serif;
 }

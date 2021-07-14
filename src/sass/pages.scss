@@ -1,19 +1,62 @@
 /* PRODUCT PAGE */
 .single-prod {
+  &__img {
+    box-shadow: 0px 1rem 2rem -1rem rgba(0, 0, 0, 0.5);
+  }
   &__info {
     align-self: center;
-    padding: 0 3rem;
+    padding: 0 6rem;
 
     & .breadcrumbs {
-      color: var(--light-color-primary);
+      display: block;
+      color: var(--color-complement);
       font-size: 1.5rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.5px;
+      margin-bottom: 3rem;
+
+      & a {
+        color: inherit;
+      }
     }
 
-    & a {
-      color: inherit;
+    & .title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      font-size: 8rem;
+      line-height: 1;
+    }
+
+    & .brand {
+      font-size: 4rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--color-complement);
+      margin-bottom: 1rem;
+    }
+
+    & .description {
+      margin-bottom: 2rem;
+    }
+
+    & .meta {
+      font-size: 0.9em;
+      font-weight: 300;
+
+      & span {
+        color: var(--color-complement);
+        font-weight: 600;
+      }
+    }
+
+    & .price {
+      width: 100%;
+      font-family: 'Playfair Display', serif;
+      font-size: 6rem;
+      font-weight: 400;
+      text-align: right;
+      margin-bottom: 2rem;
     }
   }
 }

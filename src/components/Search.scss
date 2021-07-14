@@ -5,17 +5,25 @@
   top: 2.5rem;
 
   &-input {
+    color: inherit;
     height: auto;
     padding: 0.75rem 2rem;
-    border: 1px solid var(--light-text-color);
+    border: 1px solid var(--text-color);
     border-radius: 3rem;
+    background-color: var(--bg-color);
 
     &:focus {
       outline-color: #eee;
     }
+
+    &::placeholder {
+      color: var(--text-color);
+      opacity: 0.3;
+    }
   }
 
   &-button {
+    color: var(--text-color);
     border: none;
     background-color: transparent;
     position: absolute;
