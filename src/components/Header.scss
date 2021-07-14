@@ -1,0 +1,16 @@
+@import '../sass/variables.scss';
+
+.header {
+  &__container {
+    width: $body-width;
+    height: 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    width: 20rem;
+    margin: 1rem 6rem;
+  }
+}

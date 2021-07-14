@@ -1,0 +1,8 @@
+.container {
+  @include container-basics;
+  display: flex;
+}
+
+.col-50 {
+  width: 50%;
+}

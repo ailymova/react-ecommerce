@@ -1,0 +1,24 @@
+:root {
+  // Colors
+  --light-color-primary: #20d1b1;
+  --light-color-complement: #0993f5;
+  --light-color-secondary: #121ef3;
+
+  --light-bg-color: #fefefe;
+  --light-text-color: #333;
+
+  // Gradients
+  --light-gradient-bg-primary: linear-gradient(
+    75deg,
+    var(--light-color-primary) 0%,
+    var(--light-color-complement) 50%,
+    var(--light-color-secondary) 100%
+  );
+}
+
+$body-width: calc(100% - 8rem);
+
+@mixin container-basics {
+  width: $body-width;
+  padding: 5rem 6rem;
+}

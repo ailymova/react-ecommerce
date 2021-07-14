@@ -20,8 +20,8 @@ Características Generales:
 
 - [ ] Debe tener signup (registro)
 - [ ] Debe tener login (inicio de sesión)
-- [ ] Mostrar productos
-- [ ] Mostrar detalles de producto
+- [x] Mostrar productos
+- [x] Mostrar detalles de producto
 - [ ] Al iniciar sesión, debe distinguir entre usuario de tipo ADMIN y usuario de tipo CUSTOMER
 
 Funcionalidades CUSTOMER:

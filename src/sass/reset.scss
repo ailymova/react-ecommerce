@@ -1,0 +1,36 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  // This defines what 1rem is
+  font-size: 50%; // 8px/16px = 50% -> 1rem
+  /*
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 56.25%; // 9px
+  }
+  @media only screen and (max-width: $bp-medium) {
+    font-size: 50%; // 8px
+  } */
+}
+
+body {
+  box-sizing: border-box;
+  background-color: var(--light-bg-color);
+  font-size: 2rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+/*
+::selection {
+  background-color: $color-yellow;
+  color: $color-dark-gray;
+}*/

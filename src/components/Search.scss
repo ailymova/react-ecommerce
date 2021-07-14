@@ -1,0 +1,26 @@
+.search {
+  margin-right: 6rem;
+  position: absolute;
+  right: 8rem;
+  top: 2.5rem;
+
+  &-input {
+    height: auto;
+    padding: 0.75rem 2rem;
+    border: 1px solid var(--light-text-color);
+    border-radius: 3rem;
+
+    &:focus {
+      outline-color: #eee;
+    }
+  }
+
+  &-button {
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    right: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

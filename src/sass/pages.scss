@@ -1,0 +1,19 @@
+/* PRODUCT PAGE */
+.single-prod {
+  &__info {
+    align-self: center;
+    padding: 0 3rem;
+
+    & .breadcrumbs {
+      color: var(--light-color-primary);
+      font-size: 1.5rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    & a {
+      color: inherit;
+    }
+  }
+}
