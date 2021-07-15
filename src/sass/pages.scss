@@ -1,7 +1,7 @@
 /* PRODUCT PAGE */
 .single-prod {
   &__img {
-    box-shadow: 0px 1rem 2rem -1rem rgba(0, 0, 0, 0.5);
+    box-shadow: var(--shadow);
   }
   &__info {
     align-self: center;
@@ -16,7 +16,7 @@
       letter-spacing: 0.5px;
       margin-bottom: 3rem;
 
-      & a {
+      a {
         color: inherit;
       }
     }
@@ -44,7 +44,7 @@
       font-size: 0.9em;
       font-weight: 300;
 
-      & span {
+      span {
         color: var(--colorComplement);
         font-weight: 600;
       }
@@ -57,6 +57,51 @@
       font-weight: 400;
       text-align: right;
       margin-bottom: 2rem;
+    }
+  }
+}
+
+/* LOGIN */
+.login {
+  &__image {
+    object-fit: cover;
+    height: 100%;
+  }
+
+  &__info {
+    padding: 0 6rem;
+    align-self: center;
+  }
+
+  &__input-group {
+    margin-bottom: 2rem;
+
+    & label {
+      display: block;
+      margin-left: 2rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      font-size: 1.75rem;
+    }
+
+    input {
+      background-color: inherit;
+      width: 100%;
+      min-height: 5rem;
+      height: auto;
+      padding: 0.75rem 2rem;
+      border: 1px solid var(--textColor);
+      border-radius: 3rem;
+      background-color: var(--bgColor);
+
+      &:focus {
+        outline-color: #eee;
+      }
+
+      &::placeholder {
+        color: var(--textColor);
+        opacity: 0.3;
+      }
     }
   }
 }

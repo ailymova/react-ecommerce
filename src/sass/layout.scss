@@ -3,6 +3,24 @@
   display: flex;
 }
 
+.form__container {
+  width: 70%;
+  margin: 5rem auto;
+  box-shadow: var(--shadow);
+  display: flex;
+  border-radius: 2rem;
+  overflow: hidden;
+  min-height: 50vh;
+
+  .title {
+    font-family: 'Playfair Display', serif;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+  }
+}
+
 .col-50 {
   width: 50%;
 }
