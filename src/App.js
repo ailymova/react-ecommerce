@@ -1,17 +1,11 @@
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './components/Header';
 import MenuBar from './components/MenuBar';
 import routes from './config/routes';
-import {
-  FaShoppingCart as FaCart,
-  FaUserCircle,
-  FaSignInAlt,
-  FaRegWindowClose as FaClose,
-} from 'react-icons/fa';
 import { useState, useEffect } from 'react';
-import ThemeSwitch from './components/Theme';
-import { /* ThemeSelectorContext, */ themes } from './config/theme';
+import { themes } from './config/theme';
 import { UserContext } from './context/UserContext';
+import Menu from './components/Menu';
 
 function App() {
   const mq = window.matchMedia('(prefers-color-scheme: dark)');
@@ -48,50 +42,7 @@ function App() {
       <Router>
         <Header />
         <MenuBar>
-          <ul className="menu-bar__items">
-            <li key="cart" className="menu-bar__item">
-              <a href="#cart">
-                <FaCart />
-                <span>Cart</span>
-              </a>
-            </li>
-            <li key="login" className="menu-bar__item">
-              {user ? (
-                <Link to="/dashboard">
-                  <div className="menu-bar__userAvatar">
-                    {user.first_name
-                      ? `${user.first_name[0]}${user.last_name[0]}`
-                      : 'Loader'}
-                  </div>
-                  <span>{user.first_name}</span>
-                </Link>
-              ) : (
-                <Link to="/login">
-                  <FaUserCircle />
-                  <span>Login</span>
-                </Link>
-              )}
-            </li>
-            <li key="signup" className="menu-bar__item">
-              {user ? (
-                <a href="#cerrar" onClick={() => setUser(null)}>
-                  <FaClose />
-                  <span>Salir</span>
-                </a>
-              ) : (
-                <Link to="/signup">
-                  <FaSignInAlt />
-                  <span>Signup</span>
-                </Link>
-              )}
-            </li>
-            <li key="theme" className="menu-bar__item">
-              <ThemeSwitch
-                toggle={toggleTheme}
-                on={theme === themes.light ? false : true}
-              />
-            </li>
-          </ul>
+          <Menu theme={theme} toggleTheme={toggleTheme} />
         </MenuBar>
         <Switch>
           {routes.map(route => {

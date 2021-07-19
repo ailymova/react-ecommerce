@@ -38,7 +38,11 @@ const ProductPage = () => {
           <div className="col-50">
             <img
               className="single-prod__img"
-              src={!product.image ? imageNotFound : product.image}
+              src={
+                product.image && product.image.search(/jpe?g|png/g) > 0
+                  ? product.image
+                  : product.images || imageNotFound
+              }
               alt={product.product_name}
             />
           </div>

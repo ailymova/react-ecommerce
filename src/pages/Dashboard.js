@@ -1,5 +1,6 @@
 import { UserContext } from '../context/UserContext';
 import { useContext, useEffect } from 'react';
+import { Redirect } from 'react-router-dom';
 
 const Dashboard = () => {
   const { user, setUser } = useContext(UserContext);
@@ -20,12 +21,13 @@ const Dashboard = () => {
       }));
       //console.log(user);
     };
-    getUserInfo();
+
+    user && getUserInfo();
 
     return () => {};
   });
 
-  return <div>{user.first_name}</div>;
+  return <div>{user ? user.first_name : <Redirect to="/login" />}</div>;
 };
 
 export default Dashboard;

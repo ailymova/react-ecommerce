@@ -41,7 +41,7 @@ const Home = () => {
                 <ProductCard
                   key={product._id}
                   productImage={
-                    product.image && product.image.slice(0, 4) === 'http'
+                    product.image && product.image.search(/jpe?g|png/g) > 0
                       ? product.image
                       : product.images || imageNotFound
                   }
