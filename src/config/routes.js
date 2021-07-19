@@ -1,3 +1,4 @@
+import Dashboard from '../pages/Dashboard';
 import Home from '../pages/Home';
 import Login from '../pages/Login';
 import NotFound from '../pages/NotFound';
@@ -17,6 +18,10 @@ const routes = [
   {
     path: '/signup',
     component: Signup,
+  },
+  {
+    path: '/dashboard',
+    component: Dashboard,
   },
   {
     path: '/:id',

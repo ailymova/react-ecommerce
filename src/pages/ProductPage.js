@@ -1,13 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import imageNotFound from '../assets/Image-Not-Available.png';
 import Button from '../components/Button';
+import { UserContext } from '../context/UserContext';
 import '../sass/pages.scss';
 
 const ProductPage = () => {
   const { id } = useParams();
 
   const [product, setProduct] = useState();
+
+  const { user } = useContext(UserContext);
 
   useEffect(() => {
     const URL = 'https://ecomerce-master.herokuapp.com/api/v1/item/';
@@ -59,8 +62,8 @@ const ProductPage = () => {
               <p className="col-50">Quantiy components</p>
               <h2 className="price">$ {product.price}.00</h2>
             </div>
-            <Button styleClass="btn--full" disabled={true}>
-              Login to purchase
+            <Button styleClass="btn--full" disabled={user ? false : true}>
+              {user ? 'Add to cart' : 'Login to purchase'}
             </Button>
           </div>
         </>

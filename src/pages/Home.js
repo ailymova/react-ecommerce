@@ -18,13 +18,9 @@ const Home = () => {
     const URL = 'https://ecomerce-master.herokuapp.com/api/v1/item';
     const myAbortController = new AbortController();
     const getProducts = async () => {
-      try {
-        const response = await fetch(URL, { signal: myAbortController.signal });
-        const products = await response.json();
-        setProducts(products);
-      } catch (error) {
-        console.log(error);
-      }
+      const response = await fetch(URL, { signal: myAbortController.signal });
+      const products = await response.json();
+      setProducts(products);
     };
     getProducts();
 

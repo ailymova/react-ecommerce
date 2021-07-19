@@ -7,6 +7,7 @@ export const themes = {
     colorSecondary: '#f3b312',
     bgColor: '#011129',
     textColor: '#fafafa',
+    shadow: '0px 1rem 2.5rem -1rem rgba(0, 0, 0, 0.8)',
   },
   light: {
     colorPrimary: '#20d1b1',
@@ -14,6 +15,7 @@ export const themes = {
     colorSecondary: '#121ef3',
     bgColor: '#fafafa',
     textColor: '#333',
+    shadow: '0px 1rem 2.5rem -1rem rgba(0, 0, 0, 0.5)',
   },
 };
 

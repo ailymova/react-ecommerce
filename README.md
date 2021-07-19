@@ -18,28 +18,28 @@ Base on this generic backend:
 Características Generales:
 
 - [ ] Debe tener signup (registro)
-- [ ] Debe tener login (inicio de sesión)
+- [x] Debe tener login (inicio de sesión)
 - [x] Mostrar productos
 - [x] Mostrar detalles de producto
 - [ ] Al iniciar sesión, debe distinguir entre usuario de tipo ADMIN y usuario de tipo CUSTOMER
 
 Funcionalidades CUSTOMER:
 
-- [ ] Sin Usuario / Con Usuario (sin iniciar sesión / con sesión iniciada)
+- [x] Sin Usuario / Con Usuario (sin iniciar sesión / con sesión iniciada)
 - [x] Cuando entro al home puedo ver todos los productos
 - [x] Siempre hay una barra de búsqueda en la navbar para hacer búsquedas por productos.
 - [x] Si doy click a un producto, puedo ver su detalle completo en una URL / ruta única para este producto.
 
 Sin Usuario:
 
-- [ ] En la navbar, del lado derecho, me sugiere hacer signup o login.
+- [x] En la navbar, del lado derecho, me sugiere hacer signup o login.
 - [ ] La vista de signup, y la vista de login, son urls diferentes ( /login /signup )
-- [ ] Hay un botón comprar en la vista individual del detalle de cada producto, pero este está desactivado y debes mostrar (como desees) una invitación a registrarte o iniciar sesión.
+- [x] Hay un botón comprar en la vista individual del detalle de cada producto, pero este está desactivado y debes mostrar (como desees) una invitación a registrarte o iniciar sesión.
 
 Con Usuario:
 
-- [ ] En la navbar se muestra el nombre de usuario
-- [ ] Dentro del detalle individual de un producto, se muestra el botón "comprar"
+- [x] En la navbar se muestra el nombre de usuario
+- [x] Dentro del detalle individual de un producto, se muestra el botón "comprar"
 
 Funcionalidades ADMIN:
 

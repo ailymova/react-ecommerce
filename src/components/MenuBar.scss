@@ -36,9 +36,23 @@
     cursor: pointer;
 
     & svg {
-      justify-self: center;
       width: 3rem;
       height: 3rem;
+      justify-self: center;
     }
+  }
+
+  &__userAvatar {
+    border: 3px solid var(--bgColor);
+    display: block;
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    letter-spacing: 0;
+    font-size: 1.75rem;
+    font-weight: 800;
+    text-align: center;
+    line-height: 1.9;
+    justify-self: center;
   }
 }
