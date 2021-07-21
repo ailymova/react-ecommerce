@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 /* PRODUCT PAGE */
 .single-prod {
   &__img {
@@ -7,7 +9,7 @@
     align-self: center;
     padding: 0 6rem;
 
-    & .breadcrumbs {
+    .breadcrumbs {
       display: block;
       color: var(--colorComplement);
       font-size: 1.5rem;
@@ -21,14 +23,14 @@
       }
     }
 
-    & .title {
+    .title {
       font-family: 'Playfair Display', serif;
       font-weight: 400;
       font-size: 8rem;
       line-height: 1;
     }
 
-    & .brand {
+    .brand {
       font-size: 4rem;
       font-weight: 600;
       text-transform: uppercase;
@@ -36,11 +38,11 @@
       margin-bottom: 1rem;
     }
 
-    & .description {
+    .description {
       margin-bottom: 2rem;
     }
 
-    & .meta {
+    .meta {
       font-size: 0.9em;
       font-weight: 300;
 
@@ -50,7 +52,7 @@
       }
     }
 
-    & .price {
+    .price {
       width: 100%;
       font-family: 'Playfair Display', serif;
       font-size: 6rem;
@@ -76,7 +78,7 @@
   &__input-group {
     margin-bottom: 2rem;
 
-    & label {
+    label {
       display: block;
       margin-left: 2rem;
       margin-bottom: 1rem;
@@ -105,5 +107,12 @@
         opacity: 0.3;
       }
     }
+  }
+}
+
+/* DASHBOARD */
+.dashboard {
+  &__container {
+    @include container-basics(block);
   }
 }

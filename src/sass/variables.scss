@@ -34,7 +34,8 @@
 
 $body-width: calc(100% - 8rem);
 
-@mixin container-basics {
+@mixin container-basics($display: flex) {
   width: $body-width;
   padding: 5rem 6rem;
+  display: $display;
 }
