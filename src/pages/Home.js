@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useGetApiData } from '../components/utilities/FetchUtils';
 import ProductCard from '../components/ProductCard';
 import Search from '../components/Search';
@@ -12,23 +12,33 @@ const Home = () => {
     'https://ecomerce-master.herokuapp.com/api/v1/item',
     []
   );
-  const [query, setQuery] = useState('');
+  const [filtered, setFiltered] = useState([]);
+  const [isSearchOn, setIsSearchOn] = useState(false);
 
-  const handleQuery = ev => {
+  /*   const handleQuery = ev => {
     setQuery(ev.target.value);
+  }; */
+
+  const searchProduct = searchQuery => {
+    searchQuery ? setIsSearchOn(true) : setIsSearchOn(false);
+    const result = products.filter(prod =>
+      prod.product_name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setFiltered(result);
   };
+
+  useEffect(() => {
+    setFiltered(() => products);
+  }, [products]);
 
   return (
     <>
-      <Search query={query} handleQuery={handleQuery} />
+      <Search handleQuery={searchProduct} />
 
       <div className="products__container container">
-        {products.length > 0
-          ? products
-              .filter(prod =>
-                prod.product_name.toLowerCase().includes(query.toLowerCase())
-              )
-              .map(product => (
+        {filtered.length > 0
+          ? filtered.map(product => {
+              return (
                 <ProductCard
                   key={product._id}
                   productImage={
@@ -41,8 +51,11 @@ const Home = () => {
                   productPrice={!product.price ? '100' : product.price}
                   productId={product._id}
                 />
-              ))
-          : 'Loading...!'}
+              );
+            })
+          : filtered.length === 0 && isSearchOn
+          ? 'Not found'
+          : 'Loading'}
       </div>
     </>
   );
