@@ -1,31 +1,25 @@
-import { UserContext } from '../context/UserContext';
 import { useContext, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
+import { UserContext } from '../context/UserContext';
+import { fetchURL } from '../components/utilities/FetchUtils';
 
 const Dashboard = () => {
   const { user, setUser } = useContext(UserContext);
 
   useEffect(() => {
-    const URL = 'https://ecomerce-master.herokuapp.com/api/v1/user/me';
-    const getUserInfo = async () => {
-      const resp = await fetch(URL, {
+    user &&
+      fetchURL('https://ecomerce-master.herokuapp.com/api/v1/user/me', {
         method: 'GET',
         headers: {
           Authorization: `JWT ${user.token}`,
         },
+      }).then(data => {
+        setUser(prevState => ({
+          ...prevState,
+          ...data.user,
+        }));
       });
-      const info = await resp.json();
-      setUser(prevState => ({
-        ...prevState,
-        ...info.user,
-      }));
-      //console.log(user);
-    };
-
-    user && getUserInfo();
-
-    // return () => {};
-  }, []);
+  });
 
   return (
     <div className="dashboard__container">
@@ -51,7 +45,7 @@ const Dashboard = () => {
             </tr>
             <tr>
               <td>Member since:</td>
-              <td>{user.createdAt}</td>
+              <td>{new Date(user.createdAt).toLocaleString('es-MX')}</td>
             </tr>
             <tr>
               <td>Password</td>

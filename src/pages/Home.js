@@ -1,31 +1,22 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { useGetApiData } from '../components/utilities/FetchUtils';
 import ProductCard from '../components/ProductCard';
-import imageNotFound from '../assets/Image-Not-Available.png';
 import Search from '../components/Search';
+import imageNotFound from '../assets/Image-Not-Available.png';
 
 // TODO: Limit list of product to 25
 // TODO: Pagination
 
 const Home = () => {
-  const [products, setProducts] = useState([]);
+  const products = useGetApiData(
+    'https://ecomerce-master.herokuapp.com/api/v1/item',
+    []
+  );
   const [query, setQuery] = useState('');
 
   const handleQuery = ev => {
     setQuery(ev.target.value);
   };
-
-  useEffect(() => {
-    const URL = 'https://ecomerce-master.herokuapp.com/api/v1/item';
-    const myAbortController = new AbortController();
-    const getProducts = async () => {
-      const response = await fetch(URL, { signal: myAbortController.signal });
-      const products = await response.json();
-      setProducts(products);
-    };
-    getProducts();
-
-    return () => myAbortController.abort();
-  }, []);
 
   return (
     <>

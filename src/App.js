@@ -1,11 +1,11 @@
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import routes from './config/routes';
+import { themes } from './config/theme';
 import Header from './components/Header';
 import MenuBar from './components/MenuBar';
-import routes from './config/routes';
-import { useState, useEffect } from 'react';
-import { themes } from './config/theme';
-import { UserContext } from './context/UserContext';
 import Menu from './components/Menu';
+import UserProvider from './context/UserContext';
 
 function App() {
   const mq = window.matchMedia('(prefers-color-scheme: dark)');
@@ -13,8 +13,6 @@ function App() {
     `${mq.matches ? 'dark' : 'light'}`
   );
   const [theme, setTheme] = useState(themes[themeName]);
-
-  const [user, setUser] = useState(null);
 
   const toggleTheme = () => {
     if (theme === themes.dark) {
@@ -37,8 +35,7 @@ function App() {
   });
 
   return (
-    //<ThemeSelectorContext.Provider value={(toggleTheme, themeName)}>
-    <UserContext.Provider value={{ user, setUser }}>
+    <UserProvider>
       <Router>
         <Header />
         <MenuBar>
@@ -56,8 +53,7 @@ function App() {
           })}
         </Switch>
       </Router>
-    </UserContext.Provider>
-    // </ThemeSelectorContext.Provider>
+    </UserProvider>
   );
 }
 

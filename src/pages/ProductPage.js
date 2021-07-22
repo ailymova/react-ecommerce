@@ -1,35 +1,19 @@
-import { useState, useEffect, useContext } from 'react';
+import { useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import imageNotFound from '../assets/Image-Not-Available.png';
 import Button from '../components/Button';
+import { useGetApiData } from '../components/utilities/FetchUtils';
 import { UserContext } from '../context/UserContext';
+import imageNotFound from '../assets/Image-Not-Available.png';
 import '../sass/pages.scss';
 
 const ProductPage = () => {
   const { id } = useParams();
-
-  const [product, setProduct] = useState();
+  const product = useGetApiData(
+    `https://ecomerce-master.herokuapp.com/api/v1/item/${id}`,
+    null
+  );
 
   const { user } = useContext(UserContext);
-
-  useEffect(() => {
-    const URL = 'https://ecomerce-master.herokuapp.com/api/v1/item/';
-    const myAbortController = new AbortController();
-    const getProduct = async () => {
-      try {
-        const response = await fetch(`${URL}${id}`, {
-          signal: myAbortController.signal,
-        });
-        const product = await response.json();
-        setProduct(product);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    getProduct();
-
-    return () => myAbortController.abort();
-  }, [id]);
 
   return (
     <div className="container">
