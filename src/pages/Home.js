@@ -4,8 +4,7 @@ import ProductCard from '../components/ProductCard';
 import Search from '../components/Search';
 import imageNotFound from '../assets/Image-Not-Available.png';
 
-// TODO: Limit list of product to 25
-// TODO: Pagination
+// FIXME: Limit list of product to 25
 
 const Home = () => {
   const products = useGetApiData(
@@ -14,10 +13,7 @@ const Home = () => {
   );
   const [filtered, setFiltered] = useState([]);
   const [isSearchOn, setIsSearchOn] = useState(false);
-
-  /*   const handleQuery = ev => {
-    setQuery(ev.target.value);
-  }; */
+  const [page, setPage] = useState(0);
 
   const searchProduct = searchQuery => {
     searchQuery ? setIsSearchOn(true) : setIsSearchOn(false);
@@ -25,6 +21,10 @@ const Home = () => {
       prod.product_name.toLowerCase().includes(searchQuery.toLowerCase())
     );
     setFiltered(result);
+  };
+
+  const handleClickPage = e => {
+    setPage(18 * Number(e.target.dataset.index));
   };
 
   useEffect(() => {
@@ -37,7 +37,7 @@ const Home = () => {
 
       <div className="products__container container">
         {filtered.length > 0
-          ? filtered.map(product => {
+          ? filtered.slice(page, page + 18).map(product => {
               return (
                 <ProductCard
                   key={product._id}
@@ -56,6 +56,23 @@ const Home = () => {
           : filtered.length === 0 && isSearchOn
           ? 'Not found'
           : 'Loading'}
+      </div>
+      <div className="pagination__container">
+        {Array.from(
+          Array(Math.ceil(filtered.length / 18))
+            .fill()
+            .map((_, i) => 1 + i)
+        ).map((el, i) => (
+          <button
+            id={`pagination_${i}`}
+            data-index={i}
+            className="pagination__item"
+            onClick={handleClickPage}
+            disabled={page / 18 === i}
+          >
+            {el}
+          </button>
+        ))}
       </div>
     </>
   );
