@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Button from '../components/Button';
 import { useGetApiData } from '../components/utilities/FetchUtils';
+import SkeletonProductPage from '../components/skeletons/SkeletonProductPage';
 import { UserContext } from '../context/UserContext';
 import imageNotFound from '../assets/Image-Not-Available.png';
 import '../sass/pages.scss';
@@ -56,7 +57,7 @@ const ProductPage = () => {
           </div>
         </>
       ) : (
-        'Loading'
+        <SkeletonProductPage />
       )}
     </div>
   );

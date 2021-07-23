@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useGetApiData } from '../components/utilities/FetchUtils';
+import SkeletonProductCard from '../components/skeletons/SkeletonProductCard';
 import ProductCard from '../components/ProductCard';
 import Search from '../components/Search';
 import imageNotFound from '../assets/Image-Not-Available.png';
 
-// FIXME: Limit list of product to 25
+// FIXME: Limit list of product to 25 & Fix in search
+// TODO: Column filter
 
 const Home = () => {
   const products = useGetApiData(
@@ -55,7 +57,9 @@ const Home = () => {
             })
           : filtered.length === 0 && isSearchOn
           ? 'Not found'
-          : 'Loading'}
+          : [1, 2, 3, 4, 5, 6, 7, 8, 9].map(n => (
+              <SkeletonProductCard key={n} />
+            ))}
       </div>
       <div className="pagination__container">
         {Array.from(
@@ -64,6 +68,7 @@ const Home = () => {
             .map((_, i) => 1 + i)
         ).map((el, i) => (
           <button
+            key={i}
             id={`pagination_${i}`}
             data-index={i}
             className="pagination__item"

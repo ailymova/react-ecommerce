@@ -42,9 +42,10 @@ function App() {
           <Menu theme={theme} toggleTheme={toggleTheme} />
         </MenuBar>
         <Switch>
-          {routes.map(route => {
+          {routes.map((route, i) => {
             return (
               <Route
+                key={i}
                 exact={route.exact}
                 path={route.path}
                 component={route.component}

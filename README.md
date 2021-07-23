@@ -15,25 +15,25 @@ Base on this generic backend:
 
 **Build an e-commerce with React.**
 
-Características Generales:
+General functionality:
 
-- [ ] Debe tener signup (registro)
-- [x] Debe tener login (inicio de sesión)
-- [x] Mostrar productos
-- [x] Mostrar detalles de producto
-- [ ] Al iniciar sesión, debe distinguir entre usuario de tipo ADMIN y usuario de tipo CUSTOMER
+- [ ] Signup: Let users register
+- [x] Login: Let users access
+- [x] Show products
+- [x] Show product details
+- [ ] @login, distinguish between ADMIN users & CUSTOMER users
 
-Funcionalidades CUSTOMER:
+CUSTOMER functionality:
 
-- [x] Sin Usuario / Con Usuario (sin iniciar sesión / con sesión iniciada)
-- [x] Cuando entro al home puedo ver todos los productos
-- [x] Siempre hay una barra de búsqueda en la navbar para hacer búsquedas por productos.
-- [x] Si doy click a un producto, puedo ver su detalle completo en una URL / ruta única para este producto.
+- [x] Guest view / User (no session / logged in)
+- [x] See all products on the homepage
+- [x] Search bar for products
+- [x] If click on a product, see details in a unique route for this product
 
-Sin Usuario:
+Guest:
 
-- [x] En la navbar, del lado derecho, me sugiere hacer signup o login.
-- [ ] La vista de signup, y la vista de login, son urls diferentes ( /login /signup )
+- [x] Navbar on the right suggest signup / login
+- [x] Signup & login views, each in its own route (/signup - /login)
 - [x] Hay un botón comprar en la vista individual del detalle de cada producto, pero este está desactivado y debes mostrar (como desees) una invitación a registrarte o iniciar sesión.
 
 Con Usuario:
@@ -49,7 +49,7 @@ Funcionalidades ADMIN:
 
 ## Motivation
 
-Practice how to start a semi-real project from the ground up with React. (Maybe something you can encounter in the wild out there).
+Practice how to make a semi-real project from the ground up with React. (Maybe something you can encounter in the wild out there).
 
 ## Built With
 
@@ -63,6 +63,9 @@ Practice how to start a semi-real project from the ground up with React. (Maybe 
 
 1. Responsive Design.
 1. Light/Dark Theme
+1. Product Pagination
+1. Search Bar
+1. Skeleton loader
 
 ## Coming Soon
 
