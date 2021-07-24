@@ -1,6 +1,13 @@
 .skeletons {
-  background-color: #ddd;
+  background-color: var(--skeletonColor);
   margin: 1rem 0;
+
+  &__wrapper {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--skeletonWrapper);
+    padding: 1rem;
+  }
 
   &.text {
     width: 100%;
@@ -48,4 +55,22 @@
   &__container {
     margin: 3rem 0;
   }
+}
+
+/* Shimmer */
+
+.shimmer {
+  &__wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  width: 60%;
+  height: 100%;
+  background: var(--shimmerColor);
+  box-shadow: var(--shimmerGlow);
+  transform: skewX(-20deg);
 }

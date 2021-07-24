@@ -1,18 +1,18 @@
 .menu-bar {
   &__container {
     background: var(--gradient-bg-primary);
-    width: 24rem;
+    width: 28rem;
     height: 100vh;
     position: fixed;
-    right: 0;
+    right: calc(-28rem + 8rem);
     top: 0;
-    transform: translateX(calc(24rem - 8rem));
-    transition: transform 0.2s ease-out;
+    // transform: translateX(calc(24rem - 8rem));
+    // transition: transform 0.2s ease-out;
     z-index: 10;
 
-    &:hover {
+    /* &:hover {
       transform: translateX(0);
-    }
+    } */
   }
 
   &__items {

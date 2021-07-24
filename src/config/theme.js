@@ -8,6 +8,10 @@ export const themes = {
     bgColor: '#011129',
     textColor: '#fafafa',
     shadow: '0px 1rem 2.5rem -1rem rgba(0, 0, 0, 0.8)',
+    skeletonColor: '#173152',
+    skeletonWrapper: '#11253d',
+    shimmerColor: 'rgba(255, 255, 255, 0.08)',
+    shimmerGlow: '0 0 4rem 4rem rgba(255, 255, 255, 0.025)',
   },
   light: {
     colorPrimary: '#20d1b1',
@@ -16,6 +20,10 @@ export const themes = {
     bgColor: '#fafafa',
     textColor: '#333',
     shadow: '0px 1rem 2.5rem -1rem rgba(0, 0, 0, 0.5)',
+    skeletonColor: '#e0e0e0',
+    skeletonWrapper: '#f0f0f0',
+    shimmerColor: 'rgba(255, 255, 255, 0.2)',
+    shimmerGlow: '0 0 4rem 4rem rgba(255, 255, 255, 0.05)',
   },
 };
 

@@ -1,8 +1,9 @@
+import Shimmer from './Shimmer';
 import SkeletonElement from './SkeletonElement';
 
 const SkeletonProductPage = () => {
   return (
-    <div className="container">
+    <div className="container skeletons__wrapper">
       <div className="col-50">
         <SkeletonElement type="img" />
       </div>
@@ -21,6 +22,7 @@ const SkeletonProductPage = () => {
         </div>
         <SkeletonElement type="button" />
       </div>
+      <Shimmer />
     </div>
   );
 };

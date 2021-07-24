@@ -57,27 +57,29 @@ const Home = () => {
             })
           : filtered.length === 0 && isSearchOn
           ? 'Not found'
-          : [1, 2, 3, 4, 5, 6, 7, 8, 9].map(n => (
+          : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(n => (
               <SkeletonProductCard key={n} />
             ))}
       </div>
       <div className="pagination__container">
-        {Array.from(
-          Array(Math.ceil(filtered.length / 18))
-            .fill()
-            .map((_, i) => 1 + i)
-        ).map((el, i) => (
-          <button
-            key={i}
-            id={`pagination_${i}`}
-            data-index={i}
-            className="pagination__item"
-            onClick={handleClickPage}
-            disabled={page / 18 === i}
-          >
-            {el}
-          </button>
-        ))}
+        {filtered
+          ? Array.from(
+              Array(Math.ceil(filtered.length / 18))
+                .fill()
+                .map((_, i) => 1 + i)
+            ).map((el, i) => (
+              <button
+                key={i}
+                id={`pagination_${i}`}
+                data-index={i}
+                className="pagination__item"
+                onClick={handleClickPage}
+                disabled={page / 18 === i}
+              >
+                {el}
+              </button>
+            ))
+          : ''}
       </div>
     </>
   );
