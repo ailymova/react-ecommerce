@@ -1,9 +1,17 @@
 import Shimmer from './Shimmer';
 import SkeletonElement from './SkeletonElement';
+import { motion } from 'framer-motion';
+import { containerVariants } from '../../config/animationVariants';
 
 const SkeletonProductCard = () => {
   return (
-    <div className="skeletons__wrapper">
+    <motion.div
+      className="skeletons__wrapper"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+    >
       <div className="skeletons__productCard">
         <SkeletonElement type="img" />
         <SkeletonElement type="titleCenter" />
@@ -11,7 +19,7 @@ const SkeletonProductCard = () => {
         <SkeletonElement type="pill" />
       </div>
       <Shimmer />
-    </div>
+    </motion.div>
   );
 };
 

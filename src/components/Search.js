@@ -1,9 +1,17 @@
 import './Search.scss';
 import { FaSearch } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+import { containerVariants } from '../config/animationVariants';
 
 const Search = ({ handleQuery }) => {
   return (
-    <div className="search">
+    <motion.div
+      className="search"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+    >
       <input
         type="text"
         className="search-input"
@@ -13,7 +21,7 @@ const Search = ({ handleQuery }) => {
       <button className="search-button">
         <FaSearch />
       </button>
-    </div>
+    </motion.div>
   );
 };
 

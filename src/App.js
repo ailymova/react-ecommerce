@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Switch, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 import routes from './config/routes';
 import { themes } from './config/theme';
 import Header from './components/Header';
@@ -8,6 +9,7 @@ import Menu from './components/Menu';
 import UserProvider from './context/UserContext';
 
 function App() {
+  const location = useLocation();
   const mq = window.matchMedia('(prefers-color-scheme: dark)');
   const [themeName, setThemeName] = useState(
     `${mq.matches ? 'dark' : 'light'}`
@@ -36,12 +38,12 @@ function App() {
 
   return (
     <UserProvider>
-      <Router>
-        <Header />
-        <MenuBar>
-          <Menu theme={theme} toggleTheme={toggleTheme} />
-        </MenuBar>
-        <Switch>
+      <Header />
+      <MenuBar>
+        <Menu theme={theme} toggleTheme={toggleTheme} />
+      </MenuBar>
+      <AnimatePresence exitBeforeEnter>
+        <Switch location={location} key={location.key}>
           {routes.map((route, i) => {
             return (
               <Route
@@ -53,7 +55,7 @@ function App() {
             );
           })}
         </Switch>
-      </Router>
+      </AnimatePresence>
     </UserProvider>
   );
 }

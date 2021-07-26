@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { useGetApiData } from '../components/utilities/FetchUtils';
 import SkeletonProductCard from '../components/skeletons/SkeletonProductCard';
 import ProductCard from '../components/ProductCard';
 import Search from '../components/Search';
 import imageNotFound from '../assets/Image-Not-Available.png';
+import { containerVariants } from '../config/animationVariants';
 
-// FIXME: Limit list of product to 25 & Fix in search
 // TODO: Column filter
 
 const Home = () => {
@@ -23,6 +24,7 @@ const Home = () => {
       prod.product_name.toLowerCase().includes(searchQuery.toLowerCase())
     );
     setFiltered(result);
+    setPage(0);
   };
 
   const handleClickPage = e => {
@@ -37,7 +39,13 @@ const Home = () => {
     <>
       <Search handleQuery={searchProduct} />
 
-      <div className="products__container container">
+      <motion.div
+        className="products__container container"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+      >
         {filtered.length > 0
           ? filtered.slice(page, page + 18).map(product => {
               return (
@@ -56,13 +64,13 @@ const Home = () => {
               );
             })
           : filtered.length === 0 && isSearchOn
-          ? 'Not found'
+          ? 'Not found' // TODO:
           : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(n => (
               <SkeletonProductCard key={n} />
             ))}
-      </div>
+      </motion.div>
       <div className="pagination__container">
-        {filtered
+        {filtered.length > 18
           ? Array.from(
               Array(Math.ceil(filtered.length / 18))
                 .fill()
